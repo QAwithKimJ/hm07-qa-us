@@ -13,5 +13,19 @@ test('status should be 200', async () => {
 	expect(actualStatus).toBe(400);
 });
 
+test('response body contains expected data', async () => {
+	const result = []
+	const data = await response.json();
+	for (let i = 0; i < data.length; i++) {
+		const startWorkingHours = data[i]["workingHours"]["start"];
+        const endWorkingHours = data[i]["workingHours"]["end"];
+        result.push(startWorkingHours < endWorkingHours)
+    }
+    expect(result).not.toContain(false)
+	}
+)
+
+)
+
 
 
