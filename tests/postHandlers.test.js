@@ -20,6 +20,7 @@ const requestBody = {
 }
 
 test('check courier delivery and status response as 200', async () => {
+	let postStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/couriers/check`, {
 			method: 'POST',
@@ -28,10 +29,11 @@ test('check courier delivery and status response as 200', async () => {
 			},
 			body: JSON.stringify(requestBody)
 		});
-		const data = await response.json();
-		console.log(data);
+	    postStatus = response.status;
+
 	} catch (error) {
 		console.error(error);
 	}
+	expect(postStatus).toBe(200);
 });
 

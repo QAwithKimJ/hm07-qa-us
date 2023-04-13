@@ -6,6 +6,7 @@ const requestBody = {
 }
 
 test('update price of product in kit 7 and status should be 200', async () => {
+	let putStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/products/7`, {
 			method: 'PUT',
@@ -19,5 +20,6 @@ test('update price of product in kit 7 and status should be 200', async () => {
 	} catch (error) {
 		console.error(error);
 	}
+	expect(putStatus).toBe(200);
 });
 

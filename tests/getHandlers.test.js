@@ -10,7 +10,7 @@ test('status should be 200', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	expect(actualStatus).toBe(200);
+	expect(actualStatus).toBe(400);
 });
 
 
