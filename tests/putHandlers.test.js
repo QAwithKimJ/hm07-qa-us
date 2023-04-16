@@ -30,7 +30,7 @@ test('response body should show updated grocery price change for product id 2', 
 		{
 			method: 'PUT',
 			headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json' 
 			},
 			body: JSON.stringify(requestBody)
 		});

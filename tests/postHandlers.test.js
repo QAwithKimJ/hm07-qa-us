@@ -16,7 +16,7 @@ const requestBody = {
             "quantity": 3
         }
     ],
-    "deliveryTime": 7
+    "deliveryTime": 7 
 }
 
 test('status code should be 200 OK', async () => {

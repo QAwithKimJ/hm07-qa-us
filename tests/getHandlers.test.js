@@ -10,7 +10,7 @@ test('status code should be 200 OK', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	expect(actualStatus).toBe(200);
+	expect(actualStatus).toBe(200); 
 });
 
 test('response body should contain name of kit', async () => {

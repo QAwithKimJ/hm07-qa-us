@@ -36,7 +36,7 @@ test('kit should be created then deleted', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	expect(deleteStatus).toBe(200);
+	expect(deleteStatus).toBe(200); 
 });
 
 
