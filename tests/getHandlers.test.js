@@ -1,31 +1,30 @@
 // eslint-disable-next-line no-undef
 const config = require('../config');
 
-test('status should be 200', async () => {
+test('status code should be 200 OK', async () => {
 	let actualStatus;
 	try {
-		const response = await fetch(`${config.API_URL}/api/v1/warehouses`);
+		const response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
 		actualStatus = response.status;
 		console.log(response)
 	} catch (error) {
 		console.error(error);
 	}
-	expect(actualStatus).toBe(400);
+	expect(actualStatus).toBe(200);
 });
 
-test('response body contains expected data', async () => {
-	const result = []
-	const data = await response.json();
-	for (let i = 0; i < data.length; i++) {
-		const startWorkingHours = data[i]["workingHours"]["start"];
-        const endWorkingHours = data[i]["workingHours"]["end"];
-        result.push(startWorkingHours < endWorkingHours)
-    }
-    expect(result).not.toContain(false)
+test('response body should contain name of kit', async () => {
+	let returnedResponseBody;
+	try {
+		const response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
+		returnedResponseBody = await response.json(); 
+		console.log(response)
+	} catch (error) {
+		console.error(error);
 	}
-)
+	expect(returnedResponseBody.name).toBe("Tastes of Paris");
+});
 
-)
 
 
 
